@@ -1,9 +1,7 @@
 {
-  "name": "reveal.js",
+  "name": "convo-to-connect",
   "version": "3.7.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
-  "subdomain": "revealjs",
+  "description": "Tech talk slides for Networking Your Way to Your Next Job",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
@@ -11,13 +9,13 @@
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Rhia Dixon",
+    "email": "contact@rhiadixon.com",
+    "web": "https://www.rhiadixon.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/risaco/convo-to-connect"
   },
   "engines": {
     "node": ">=4.0.0"

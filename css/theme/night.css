@@ -41,6 +41,10 @@
 .large {
   font-size: 150% !important; }
 
+.not-so-big {
+  font-size: 275%;
+}
+
 .scaled {
   width: 50%; }
 
@@ -52,15 +56,25 @@
   top: 25%;
   left: 35%; }
 
-#me .warning {
-  margin-top: 2em;
-  display: flex;
-  justify-content: center; }
-  #me .warning img {
-    height: 1.5em;
-    margin: 0 .5em; }
-  #me .warning p {
-    line-height: 1.5em; }
+.reveal .decor {
+  color: #e7ad52;
+}
+
+.reveal .decor-1 {
+  color: #e7ad52;
+  font-weight: bold;
+}
+
+.reveal .decor-2 {
+  color: #e7ad52;
+  font-style: italic;
+}
+
+.reveal .decor-3 {
+  color: #e7ad52;
+  font-weight: bold;
+  font-style: italic;
+}
     
 /*********************************************
  * GLOBAL STYLES

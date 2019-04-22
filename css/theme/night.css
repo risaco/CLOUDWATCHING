@@ -12,25 +12,25 @@
   left: 5%;
   display: block;
   width: 50%; }
-  .twitter-overlay span {
-    font-family: 'Source Sans Pro', Helvetica, sans-serif;
-    color: #D3D3D3;
-    display: inline-block;
-    margin-right: 2.5%;
-    float: left; }
+.twitter-overlay span {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  color: #D3D3D3;
+  display: inline-block;
+  margin-right: 2.5%;
+  float: left; }
 
 .speaker-title {
   display: flex; }
-  .speaker-title .flex-1 {
-    flex: 1; }
-    .speaker-title .flex-1 .circle {
-      border-radius: 50%;
-      width: 60%; }
-  .speaker-title .flex-2 {
-    flex: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
+.speaker-title .flex-1 {
+  flex: 1; }
+.speaker-title .flex-1 .circle {
+  border-radius: 50%;
+  width: 60%; }
+.speaker-title .flex-2 {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
 
 .small {
   font-size: 80% !important; }

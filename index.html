@@ -72,52 +72,136 @@
 				<!-- And so it begins... -->
 				<section id="what" data-transition="convex">
 					<section>
-						<h2>So <span class="decor">what</span> is networking?</h2>
+						<h2 class="decor-1">Story Time</h2>
 					</section>
 					<section>
-						<h2>Formal Definition:</h2>
-							<blockquote>
-								The exchange of information or services among individuals, groups, or institutions.
-							</blockquote>
-					</section>
-					<section data-transition="convex">
-						<h2>Better Definition:</h2>
-						<blockquote>
-							The cultivation of productive relationships for employment and business.
-						</blockquote>
+						<h2>Back in the day...</h2>
+						<iframe src="https://giphy.com/embed/FoH28ucxZFJZu" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 					</section>
 					<section>
-						<h2>Easy enough, right?</h2>
+						<h2>Things were good...</h2>
+						<h3 class="fragment">...or so we thought.</h3>
 					</section>
 					<section>
-						<h2>But what does this <span class="decor-2">mean</span>?</h2>
-						<iframe src="https://giphy.com/embed/BpadRS0HKJ7Irh150L" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+						<h2>We were <span class="decor-2">definitely</span> doing it all wrong</h2>
 					</section>
 					<section>
-						<h2>Getting to the bottom of things...</h2>
-					</section>
-					<section>
-						<h2>Networking is...</h2>
-						<blockquote>
-							Effectively communicating with others in efforts to foster a mutually beneficial relationship with shared knowledge and resources.
-						</blockquote>
+						<h2>Seriously.</h2>
+						<div class="speaker-title">
+							<div class="flex-1">
+								<ul>
+									<h3><i class="fas fa-times fragment decor"></i> Who</h3>
+									<h3><i class="fas fa-times fragment decor"></i> What</h3>
+									<h3><i class="fas fa-times fragment decor"></i> When</h3>
+								</ul>
+							</div>
+							<div class="flex-1">
+								<ul>
+									<h3><i class="fas fa-times fragment decor"></i> Where</h3>
+									<h3><i class="fas fa-times fragment decor"></i> Why</h3>
+									<h3><i class="fas fa-times fragment decor"></i> How</h3>
+								</ul>
+							</div>
+						</div>
 					</section>
 				</section>
 
-				<!-- Importance of Networking -->
+						
+<!-- 
+						My team experienced one helluva setback when a third party site changed their site layout.
+Broke all of the shit for two major process (each with multiple EC2 instances with local logging).
+Via post mortem -- we determined our major flaws were due to logging...how, what, where, there was no who, and no real why either.
+This led to a hefty revamp.
+
+What/WHy - previously, we were logging every step of every process involved with finding, obtaining, updating. There were no levels.
+There should have been levels! 
+ - Implemented log levels: Debug, Info, Warn (things that we know may happen, but don't stop the show), Error
+
+How/Where- previously...we were creating log files by date and appending logs in batches on the local machine,
+ and if an instance died before a certain time, those logs were gone.The two different processes run independently of each other,
+and we had to login for each instance to search the log files
+ - Started using CloudWatch log groups/streams to get relatively real-time logging in a centralized location -- all machines for
+one app can log to the same stream -- this makes it much easier to detect if an issue is happening on one machine, or all of the machines.
+
+Who - previously, whoever drew the card to go figure out what was wrong had to hunt down the error, if they could find it.
+ - now, we set alerts for seeing certain messages (number of errors, number of warnings, type of message), and if the threshold
+is exceeded, CloudWatch sends us an email AND an @channel Slack message -->
+							
+					
+					
+				
+
+				<!-- How we fixed it -->
 				<section id="why" data-transition="convex">
 					<section>
-						<h2><span class="decor">Why</span> should I <em>care</em> about networking?</h2>
+						<h2>Enter <span class="decor-1"> AWS CloudWatch</span>!</h2>
 					</section>
 					<section>
-						<h3><span class="decor">WHAT</span> you know is important...</h3>
+						<h2>What and Why</h2>
 						<br>
-						<iframe src="https://giphy.com/embed/1BffvyZzY5vcA2wrcj" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+						<div class="speaker-title">
+							<div class="flex-1">
+								<h3>Previously</h3>
+								<ul>
+									<li class="fragment">Logging everything</li>
+									<li class="fragment">Unformatted</li>
+									<li class="fragment">Unsearchable</li>
+								</ul>
+							</div>
+							<div>
+								<h3 class="decor">vs.</h3>
+							</div>
+							<div class="flex-1">
+								<h3>Currently</h3>
+								<ul>
+									<li class="fragment">Log levels</li>
+									<li class="fragment">Formatted</li>
+									<li class="fragment">Searchable</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>Where and How</h2>
+						<br>
+						<div class="speaker-title">
+							<div class="flex-1">
+								<h3>Previously</h3>
+								<ul>
+									<li class="fragment">Local Text File</li>
+									<li class="fragment">Per App/Machine</li>
+									<li class="fragment">Batch Appended</li>
+								</ul>
+							</div>
+							<div>
+								<h3 class="decor">vs.</h3>
+							</div>
+							<div class="flex-1">
+								<h3>Currently</h3>
+								<ul>
+									<li class="fragment">Logs in Cloud</li>
+									<li class="fragment">Groups & Streams</li>
+									<li class="fragment">Constant Push</li>
+								</ul>
+							</div>
+						</div>
 					</section>
 					<section data-transition="convex">
+						<h2>Before CloudWatch</h2>
+						
+						<iframe src="https://giphy.com/embed/3oEjHUf7j0aFDce0dG" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+					</section>
+					<section data-transition="convex">
+						<h2>After CloudWatch</h2>
+						<iframe src="https://giphy.com/embed/llUHO42hQ1xAtCVP4g" width="480" height="358" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>	
+					</section>
+				</section>
+
+				<!-- Time to show it off! -->
+				<section data-transition="convex">
+					<section>
 						<h3><span class="decor">WHO</span> you know might be more important</h3>
 						<br>
-						<iframe src="https://giphy.com/embed/3otPoroTiHYWb7p3Ww" width="480" height="358" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 					</section>
 					<section>
 						<div class="speaker-title">
@@ -177,201 +261,13 @@
 					</section>
 				</section>
 
-				<!-- Who is the Network? -->
-				<section id="who" data-transition="convex">
-					<section>
-						<h2><span class="decor">Who</span> makes up the network?</h2>
-					</section>
-					<section>
-						<h3>Degrees of Networking</h3>
-						<img src="https://66.media.tumblr.com/075f238720d866927e765dc2de42d2d9/tumblr_n02kqueD331s141c3o1_500.gif">
-					</section>
-					<section>
-						<h3>Ground Zero: Nuclear Network</h3>
-						<p class="decor-1">HIGH VOUCH, MODERATE KNOWLEDGE</p>
-						<p>Those closest to you</p>		
-					</section>
-					<section data-transition="none">
-						<h3>Ground Zero: Nuclear Network</h3>
-						<ul>
-							<li class="fragment">Family Members</li>
-							<li class="fragment">Close Friends</li>
-							<li class="fragment">Close Co-Workers</li>
-						</ul>
-					</section>
-					<section>
-						<h3>1&#176 : "Work" Circle</h3>
-						<p class="decor-1">HIGH VOUCH, HIGH KNOWLEDGE</p>
-						<p>Those you have worked with in some capacity</p>
-					</section>
-					<section data-transition="none">
-						<h3>1&#176 : "Work" Circle</h3>
-						<ul>
-							<li class="fragment">Teammates</li>
-							<li class="fragment">Co-Workers</li>
-							<li class="fragment">Organizations</li>
-						</ul>
-					</section>
-					<section>
-						<h3>2&#176 : I know a guy*</h3>
-						<p class="decor-1">MODERATE VOUCH, MOD/HIGH KNOWLEDGE</p>
-						<p>Those you have met but haven't worked with</p>
-					</section>
-					<section data-transition="none">
-						<h3>2&#176 : I know a guy*</h3>
-						<ul>
-							<li class="fragment">Conferences Attendees</li>
-							<li class="fragment">Networking Events</li>
-							<li class="fragment">Connected via mutual friend</li>
-						</ul>
-					</section>
-					<section>
-						<h3>3&#176 : Peripheral Network</h3>
-						<p class="decor-1">LOW VOUCH, MODERATE KNOWLEDGE</p>
-						<p>Those you have not met but may interact with</p>
-					</section>
-					<section data-transition="none">
-						<h3>3&#176 : Peripheral Network</h3>
-						<ul>
-							<li class="fragment">Social Media</li>
-							<li class="fragment">Friends of 2&#176 Friends</li>
-							<li class="fragment">Members of Other Orgs</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Target the sweet spot</h3>
-						<ol>
-							<li class="fragment">They know you and your skills</li>
-							<li class="fragment">They believe you'd be an awesome fit</li>
-						</ol>
-					</section>
-				</section>
-
-				<!-- How to Network -->
-				<section id="how" data-transition="convex">
-					<section>
-						<h2><span class="decor">How</span> do we<br>initiate and cultivate<br>these connections?</h2>
-					</section>
-					<section>
-						<iframe src="https://giphy.com/embed/xqN3w2LvVYOru" width="480" height="248" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-					</section>
-					<section>
-						<h3>Have a plan when you can</h3>
-						<p class="fragment">Set a goal to meet 10 new people</p>
-					</section>
-					<section>
-						<h3>Don't let titles dissuade you</h3>
-						<p class="fragment">You don't know who or what they know yet</p>
-					</section>
-					<section>
-						<h3>Fight fear, make the first move</h3>
-						<div class="speaker-title" id="hey-wassup-hello">
-							<div class="flex-1 fragment fade-in-then-semi-out" data-fragment-index="1">
-								<iframe src="https://giphy.com/embed/ORUQqjrwU0cWS3heVX" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-							</div>
-							<div class="flex-1 fragment fade-in" data-fragment-index="2">
-								<iframe src="https://giphy.com/embed/zI19V0pvL7VbzQymhm" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-							</div>
-							<div class="flex-1 fragment fade-in" data-fragment-index="3">
-								<iframe src="https://giphy.com/embed/5b7kl7U7dmAsyHPd6g" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-							</div>
-						</div>
-					</section>
-					<section>
-						<h3>Small talk leads to more talk</h3>
-						<p class="fragment">Start simple, the conversation will grow organically</p>
-					</section>
-					<section>
-						<h3>In a room full of them...</h3>
-						<h3 class="fragment">be a <span class="decor-2">YOU</span></h3>
-						<p class="fragment">Your real self will serve you far better than your representative self</p>
-					</section>
-					<section>
-						<h3>Be a genuine listener</h3>
-						<p class="fragment">Be present in the conversation so you can remember the connection</p>
-					</section>
-					<section>
-						<h3>Consider how you can help</h3>
-						<p class="fragment">One-sided relationships don't last long</p>
-					</section>
-					<section>
-						<h3>Trade contact info</h3>
-						<p class="fragment">You can't help or be helped if you can't get in touch</p>
-					</section>
-					<section>
-						<h3>Follow up and follow through!</h3>
-					</section>
-				</section>
-
-				<!-- When and Where to Network -->
-				<section id="when" data-transition="convex">
-					<section>
-						<h2>Okay. We've covered:</h2>
-						<ul>
-							<h3><i class="fas fa-check fragment decor"></i> What</h3>
-							<h3><i class="fas fa-check fragment decor"></i> Why</h3>
-							<h3><i class="fas fa-check fragment decor"></i> Who</h3>
-							<h3><i class="fas fa-check fragment decor"></i> How</h3>
-						</ul>
-					</section>
-					<section>
-						<h2>When and where should we network?</h2>
-						<iframe src="https://giphy.com/embed/14mgxYFJHXGmoo" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-					</section>
-					<section>
-						<h2>All the time.</h2>
-						<h2 class="decor">
-							<span class="fragment" data-fragment-index="1">EH.</span>
-							<span class="fragment" data-fragment-index="2">VREE.</span>
-							<span class="fragment" data-fragment-index="3">WHERE.</span>
-						</h2>
-					</section>
-					<section>
-						<h3>Everywhere but funerals and bathrooms</h3>
-						<iframe src="https://giphy.com/embed/BIZkwFtu2xDlS" width="426" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-					</section>
-					<section>
-						<h3>When opportunities arise...</h3>
-						<h2 class="fragment decor-2">TAKE THEM</h2>
-					</section>
-					<section>
-						<h3>Awesome spots to network:</h3>
-						<div class="speaker-title">
-							<div class="flex-1">
-								<ul>
-									<li class="fragment">Conferences</li>
-									<li class="fragment">Meetups</li>
-									<li class="fragment">Shindigs</li>
-									<li class="fragment">Airports</li>
-								</ul>
-							</div>
-							<div class="flex-1">
-								<ul>
-									<li class="fragment">Elevators</li>
-									<li class="fragment">Coffeeshops</li>
-									<li class="fragment">Chipotle*</li>
-									<li class="fragment">Work</li>
-								</ul>
-							</div>
-							<div class="flex-1">
-								<ul>
-									<li class="fragment">LinkedIn</li>
-									<li class="fragment">Twitter</li>
-									<li class="fragment">Facebook</li>
-									<li class="fragment">Instagram</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-				</section>
-
 				<!-- Conclusion -->
 				<section id="major-keys" data-transition="convex">
 					<section>
 						<h2>Major Keys</h2>
-						<h3 class="fragment decor">COMMUNICATION</h3>
-						<h3 class="fragment decor">CONNECTION</h3>
-						<h3 class="fragment decor">FOLLOW THROUGH</h3>
+						<h3 class="fragment decor">Centralize Logging</h3>
+						<h3 class="fragment decor">Log Levels Matter</h3>
+						<h3 class="fragment decor">Cloud logging makes life beeter</h3>
 					</section>
 					<section>
 						<h2>More than a network, we're building...</h2>
@@ -389,13 +285,13 @@
 							<img src="img/questions.jpeg" alt="Questions" style="max-height: auto; max-width: 50%;">
 						</div>
 					</div>
-					<h5>Slides available at: <a href="https://www.rhiadixon.com/CONNECTwork">https://www.rhiadixon.com/CONNECTwork</a></h5>
+					<h5>Slides available at: <a href="https://www.rhiadixon.com/CLOUDWATCHING">https://www.rhiadixon.com/CLOUDWATCHING</a></h5>
 
 				</section>
 			</div>
 		</div>
 		<div class="twitter-overlay">
-			<span>@TheFakeRiRi</span> <span>#CONNECTwork</span> <span>#BreakingIn</span>
+			<span>@TheFakeRiRi</span> <span>#CLOUDWATCHING</span> <span>#SODEVCON</span>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>

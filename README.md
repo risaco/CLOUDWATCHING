@@ -1,2 +1,2 @@
-# convo-to-connect
-Slides for tech talk titled Networking Your Way to Your Next Job
+# CLOUDWATCHING
+Slides for tech talk titled CloudWatch-ing: Creating More Useful Logs & Alerts with AWS

@@ -105,32 +105,7 @@
 						</div>
 					</section>
 				</section>
-
-						
-<!-- 
-						My team experienced one helluva setback when a third party site changed their site layout.
-Broke all of the shit for two major process (each with multiple EC2 instances with local logging).
-Via post mortem -- we determined our major flaws were due to logging...how, what, where, there was no who, and no real why either.
-This led to a hefty revamp.
-
-What/WHy - previously, we were logging every step of every process involved with finding, obtaining, updating. There were no levels.
-There should have been levels! 
- - Implemented log levels: Debug, Info, Warn (things that we know may happen, but don't stop the show), Error
-
-How/Where- previously...we were creating log files by date and appending logs in batches on the local machine,
- and if an instance died before a certain time, those logs were gone.The two different processes run independently of each other,
-and we had to login for each instance to search the log files
- - Started using CloudWatch log groups/streams to get relatively real-time logging in a centralized location -- all machines for
-one app can log to the same stream -- this makes it much easier to detect if an issue is happening on one machine, or all of the machines.
-
-Who - previously, whoever drew the card to go figure out what was wrong had to hunt down the error, if they could find it.
- - now, we set alerts for seeing certain messages (number of errors, number of warnings, type of message), and if the threshold
-is exceeded, CloudWatch sends us an email AND an @channel Slack message -->
-							
-					
-					
 				
-
 				<!-- How we fixed it -->
 				<section id="why" data-transition="convex">
 					<section>
@@ -200,82 +175,34 @@ is exceeded, CloudWatch sends us an email AND an @channel Slack message -->
 				<!-- Time to show it off! -->
 				<section data-transition="convex">
 					<section>
-						<h3><span class="decor">WHO</span> you know might be more important</h3>
-						<br>
+						<h2 class="decor-1">SHOW & TELL</h3>
 					</section>
 					<section>
-						<div class="speaker-title">
-							<div class="flex-1">
-								<h3>WHAT:</h3>
-								<ul>
-									<li class="fragment">Knowledge</li>
-									<li class="fragment">Skills</li>
-									<li class="fragment">Abilities</li>
-								</ul>
-							</div>
-							<div class="flex-1">
-								<h3 class="decor">vs.</h3>
-							</div>
-							<div class="flex-1">
-								<h3>WHO:</h3>
-								<ul>
-									<li class="fragment">Personality</li>
-									<li class="fragment">Passion</li>
-									<li class="fragment">Potential</li>
-								</ul>
-							</div>
-						</div>
+						<h2>My Favorite Things</h2>
+						<h3 class="fragment decor">Ease of Use & Integrations</h3>
+						<h3 class="fragment decor">Centralized Logging</h3>
+						<h3 class="fragment decor">Searchable Logs</h3>
+						<h3 class="fragment decor">Cross-App Metrics</h3>
 					</section>
-					<section>
-						<h3>Job hunting <span class="decor">WITHOUT</span> networking:</h3>
-						<div class="speaker-title" id="without-networking">
-							<div class="flex-1 fragment fade-in-then-semi-out" data-fragment-index="1">
-								<iframe src="https://giphy.com/embed/1wnpBNlTEwYKroGRTw" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-							</div>
-							<div class="flex-1 fragment fade-in" data-fragment-index="3">
-								<div class="fragment grow">
-									<iframe src="https://giphy.com/embed/3ov9jCGzR1JtD8Hlni" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
-								</div>
-							</div>
-							<div class="flex-1 fragment fade-in-then-semi-out" data-fragment-index="2">
-								<iframe src="https://giphy.com/embed/efe8G5BvTMxcL75i40" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-							</div>
-						</div>
-					</section>
-					<section>
-						<h3>Job hunting <span class="decor">WITH</span> networking:</h3>
-						
-							<div class="fragment fade-in">
-								<iframe src="https://giphy.com/embed/13yUqHmfe73Zjq" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-							</div>
-							
-					</section>
-					<section>
-						<h3>A good network has benefits</h3>
-						<ul>
-							<li class="fragment">Recommendations</li>
-							<li class="fragment">New Opportunities</li>
-							<li class="fragment">Mentorship</li>
-							<li class="fragment">Expanded Reach</li>
-						</ul>
-					</section>
+					
 				</section>
 
 				<!-- Conclusion -->
 				<section id="major-keys" data-transition="convex">
-					<section>
+					<section> 
 						<h2>Major Keys</h2>
-						<h3 class="fragment decor">Centralize Logging</h3>
-						<h3 class="fragment decor">Log Levels Matter</h3>
-						<h3 class="fragment decor">Cloud logging makes life beeter</h3>
+						<iframe src="https://giphy.com/embed/3o6Ztl1QaxgcDdSG4w" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 					</section>
 					<section>
-						<h2>More than a network, we're building...</h2>
-						<h2 class="fragment decor">a CONNECTwork!</h2>
+						<h2>Major Keys</h2>
+						<h3 class="fragment decor">Log Levels Matter</h3>
+						<h3 class="fragment decor">Centralize Your Logs</h3>
+						<h3 class="fragment decor">Log Strategically</h3>
+						<h3 class="fragment decor">Metrics Make a World of Difference</h3>
 					</section>
 					<section>
 						<h2>You've GOT this!</h2>
-						<iframe src="https://giphy.com/embed/luyEnUJSGwX3W" width="480" height="235" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+						<iframe src="https://giphy.com/embed/qNnQAESrblfDG" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 					</section>
 				</section>
 				<section id="questions" data-transition="convex">

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>CloudWatching</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css">
@@ -186,6 +186,77 @@
 					</section>
 				</section>
 
+				<!-- Terraform -->
+				<section data-transition="convex">
+					<section>
+						<h2 class="decor-1">Terraform Metrics</h3>
+					</section>
+					<section>
+						<h2>Basic Metric Filter</h2>
+						<pre><code class="hljs codefont js" data-trim>
+							resource "aws_cloudwatch_log_metric_filter" "unique-name-of-your-filter-resource" {
+							     name    = "name-of-your-filter-pattern"
+							     pattern = "\"the actual pattern you are looking for\""
+							     log_group_name = "logroup/app.name.orwhatevs/"
+
+							     metric_transformation {
+							          namespace = "${var.metric_namespace}"
+							          name  = "Easy-To-Spot-Name-Of-Your-Metric"
+							          value = "1"
+							          default_value = "0"
+							      }
+							}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Parsed Metric Filter</h2>
+						<pre><code class="hljs codefont js" data-trim>
+							resource "aws_cloudwatch_log_metric_filter" "unique-name-of-another-filter-resource" {
+							     name    = "your-new-filter-pattern-name"
+							     pattern = "[..., user=*root*, spacer=*-*, colx=*Some* && coly=*Web*, count]"
+							     log_group_name = "logroup/app.name.orwhatevs/"
+
+							     metric_transformation {
+							          namespace = "${var.metric_namespace}"
+							          name  = "Easy-To-Spot-Name-Of-Your-Metric"
+							          value = "$count"
+							          default_value = "0"
+							      }
+							}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Basic Metric Alarm</h2>
+						<pre><code class="hljs codefont js" data-trim>
+							resource "aws_cloudwatch_metric_alarm" "unique-name-of-your-alarm-resource" {
+							     alarm_name = "Easy-To-Spot-Name-Of-Your-Metric"
+							     alarm_description   = "10 errors in 10 minutes Error connecting to SQL Server"
+							     comparison_operator = "GreaterThanOrEqualToThreshold"
+							     metric_name         = "Easy-To-Spot-Name-Of-Your-Metric"
+							     namespace           = "${var.metric_namespace}"
+							     period              = "900"
+							     statistic           = "Sum"
+							     threshold           = "10"
+							     evaluation_periods  = "1"
+							     datapoints_to_alarm = "1"
+							     treat_missing_data  = "notBreaching"
+							     alarm_actions       = [
+							          "${data.aws_sns_topic.yada.arn}","${data.aws_sns_topic.blah.arn}"]
+							}
+						</code></pre>
+					</section>
+				</section>
+
+				<!-- Resources -->
+				<section data-transition="convex">
+					<section>
+						<h2>Resources</h2>
+						<h3 class="fragment"><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html">CloudWatch Documentation</a></h3>
+						<h3 class="fragment"><a href="https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html">Terraform with CloudWatch</a></h3>
+						<h3 class="fragment"><a href="https://grafana.com/docs/">Grafana Documentation</a></h3>
+					</section>
+				</section>
+
 				<!-- Conclusion -->
 				<section id="major-keys" data-transition="convex">
 					<section> 
@@ -218,7 +289,7 @@
 			</div>
 		</div>
 		<div class="twitter-overlay">
-			<span><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></span><span>@TheFakeRiRi</span> <span>#CLOUDWATCHING</span><span>#NDCMinnesota</span><span>@NDC_conferences</span>
+			<span><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></span><span>@TheFakeRiRi</span> <span>#CLOUDWATCHING</span><span>#flyovercamp</span><span>@flyovercamp</span>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>

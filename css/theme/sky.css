@@ -41,6 +41,9 @@
 .large {
   font-size: 150% !important; }
 
+.codefont {
+  font-size: 70% !important; }
+
 .reveal .not-so-big {
   font-size: 275%;
 }

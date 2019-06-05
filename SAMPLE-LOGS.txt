@@ -1,0 +1,12 @@
+SAMPLE LOGS
+
+214894554 [6] WARN Log WIN-SMPL569 - Unable to get autodownload radio button element
+2019-05-30 11:33:57 - 2543060a-202c-3899-9ed6-ea4496bf377a - Homogeneous_Splitting - INFO - bob.blah - UPS_Billing_Data package-count 190676
+2019-05-30 11:33:57 - 2543060a-202c-3899-9ed6-ea4496bf377a - Homogeneous_Splitting - INFO - root - FBO_Billing_Data invoice-count 190676
+2019-05-30 11:33:57 - 2543060a-202c-3899-9ed6-ea4496bf377a - Homogeneous_Splitting - INFO - root - UPS_Billing_Data package-count 190676
+214894554 [6] ERROR Log WIN-SMPL569 - Unable to process invoices for customer account
+
+
+SAMPLE PARSED FILTER PATTERN
+
+[..., user, spacer, carrier=UPS*, countType=package-count, count]
